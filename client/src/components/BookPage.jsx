@@ -20,7 +20,7 @@ const BookPage = () => {
         setIndex(0)
         const fetchData = async () => {
             try {
-                const responnse = await axios.get(`${import.meta.env.VITE_FRONTEND_URL}/product/${id}`)
+                const responnse = await axios.get(`https://s47-dhruv-capstone-2-craftershub-1.onrender.com/product/${id}`)
                 // console.log(responnse);
                 setreload(true)
                 setData(responnse.data)
@@ -33,7 +33,7 @@ const BookPage = () => {
         const fetchUser = async () => {
             try {
                 const id = localStorage.getItem('id')
-                const response = await axios.get(`${import.meta.env.VITE_FRONTEND_URL}/login/success`, (id) ? {
+                const response = await axios.get(`https://s47-dhruv-capstone-2-craftershub-1.onrender.com/login/success`, (id) ? {
                     headers: {
                         'Authorization': `Bearer ${id}`,
                     }
@@ -49,7 +49,7 @@ const BookPage = () => {
         //fetch Owner
         const fetchOwner = async () => {
             try {
-                const owner = await axios(`${import.meta.env.VITE_FRONTEND_URL}/user`)
+                const owner = await axios(`https://s47-dhruv-capstone-2-craftershub-1.onrender.com/user`)
                 console.log("Owner", owner.data);
                 console.log("product data", product.email);
                 const actualUser = owner.data.filter((item) => item.username === product.email)
@@ -75,7 +75,7 @@ const BookPage = () => {
     //Handle payment
     const handelPayment = async () => {
         try {
-            const response = await axios.post(`${import.meta.env.VITE_FRONTEND_URL}/product/payment`, {
+            const response = await axios.post(`https://s47-dhruv-capstone-2-craftershub-1.onrender.com/product/payment`, {
                 price: product.price
             })
             console.log(response.data.order.amount);
@@ -87,7 +87,7 @@ const BookPage = () => {
                 description: "Crafters hub",
                 image: "https://res.cloudinary.com/dhruv1184/image/upload/v1712914306/uyumc8u8kp4zihunsb2c.png",
                 order_id: response.data.order.id,
-                callback_url: `${import.meta.env.VITE_FRONTEND_URL}/product/paymentVerification?username=${onlineUser.username}`,
+                callback_url: `https://s47-dhruv-capstone-2-craftershub-1.onrender.com/product/paymentVerification?username=${onlineUser.username}`,
                 prefill: {
                     "name": user.name,
                     "email": user.username,

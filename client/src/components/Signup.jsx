@@ -40,7 +40,7 @@ const Signup = () => {
       if (password == confirmPassword) {
         if(passwordRegex.test(password)){
 
-          axios.post(`${import.meta.env.VITE_FRONTEND_URL}/signup`, {
+          axios.post(`https://s47-dhruv-capstone-2-craftershub-1.onrender.com/signup`, {
             name,
           username: email,
           password,
@@ -75,7 +75,7 @@ const Signup = () => {
       try {
         const id = localStorage.getItem('id')
 
-        const response = await axios.get(`${import.meta.env.VITE_FRONTEND_URL}/login/success`, (id) ? {
+        const response = await axios.get(`https://s47-dhruv-capstone-2-craftershub-1.onrender.com/login/success`, (id) ? {
           headers: {
             'Authorization': `Bearer ${id}`,
           }
@@ -92,7 +92,7 @@ const Signup = () => {
   const generateOtp = () => {
     setValidOTP('')
     if (email) {
-      axios.post(`${import.meta.env.VITE_FRONTEND_URL}/otpVerification`, { email })
+      axios.post(`https://s47-dhruv-capstone-2-craftershub-1.onrender.com/otpVerification`, { email })
         .then(res => {
           setValidOTP(res.data.validOTP)
           setOtpGenterated(true)
@@ -107,7 +107,7 @@ const Signup = () => {
   console.log(validOtp);
   console.log(error);
   const googlesignuup = () => {
-    window.open(`${import.meta.env.VITE_FRONTEND_URL}/auth/google/callback`, "_self")
+    window.open(`https://s47-dhruv-capstone-2-craftershub-1.onrender.com/auth/google/callback`, "_self")
   }
   return (
     <div className="flex">

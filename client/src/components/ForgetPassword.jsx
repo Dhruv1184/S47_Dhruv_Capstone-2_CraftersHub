@@ -12,7 +12,7 @@ const ForgetPassword = () => {
 
     const onSendbtn = (e) => {
         e.preventDefault()
-        axios.post(`${import.meta.env.VITE_FRONTEND_URL}/forgotPassword`, { username: email })
+        axios.post(`https://s47-dhruv-capstone-2-craftershub-1.onrender.com/forgotPassword`, { username: email })
             .then((res) => {
                 console.log(res)
                 setInfo('Please check your mail')

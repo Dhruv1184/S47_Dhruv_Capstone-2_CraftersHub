@@ -21,7 +21,7 @@ const Product = () => {
         try {
             const id = localStorage.getItem('id')
 
-            const response = await axios.get(`${import.meta.env.VITE_FRONTEND_URL}/login/success`, (id) ? {
+            const response = await axios.get(`https://s47-dhruv-capstone-2-craftershub-1.onrender.com/login/success`, (id) ? {
                 headers: {
                     'Authorization': `Bearer ${id}`,
                 }
@@ -41,7 +41,7 @@ const Product = () => {
         const fetchData = async () => {
             setError('')
             try {
-                const res = await axios.get(`${import.meta.env.VITE_FRONTEND_URL}/product`, {
+                const res = await axios.get(`https://s47-dhruv-capstone-2-craftershub-1.onrender.com/product`, {
                     headers: {
                         "Content-Type": "application/json",
                         "Authorization": localStorage.getItem('email')

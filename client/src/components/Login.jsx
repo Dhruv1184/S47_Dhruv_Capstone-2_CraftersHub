@@ -17,7 +17,7 @@ const Login = () => {
   const onLoginBtn = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.post(`${import.meta.env.VITE_FRONTEND_URL}/login`, {
+      const response = await axios.post(`https://s47-dhruv-capstone-2-craftershub-1.onrender.com/login`, {
         username: email,
         password
       })
@@ -36,7 +36,7 @@ const Login = () => {
       try {
         const id = localStorage.getItem('id')
 
-        const response = await axios.get(`${import.meta.env.VITE_FRONTEND_URL}/login/success`, (!id) ? { withCredentials: true } : {
+        const response = await axios.get(`https://s47-dhruv-capstone-2-craftershub-1.onrender.com/login/success`, (!id) ? { withCredentials: true } : {
           headers: {
             'Authorization': `Bearer ${id}`,
           }

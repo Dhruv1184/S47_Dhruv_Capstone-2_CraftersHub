@@ -52,7 +52,7 @@ const Login = () => {
 
 
   const googlePage = () => {
-    window.open(`${import.meta.env.VITE_SERVER_URL}/auth/google/callback`, "_self")
+    window.open(`https://s47-dhruv-capstone-2-craftershub-1.onrender.com/auth/google/callback`, "_self")
   }
 
   window.addEventListener('click',()=>{

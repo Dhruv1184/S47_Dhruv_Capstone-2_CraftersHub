@@ -34,7 +34,7 @@ const Form = () => {
         try {
             const id = localStorage.getItem('id')
 
-            const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/login/success`, (id) ? {
+            const response = await axios.get(`${import.meta.env.VITE_FRONTEND_URL}/login/success`, (id) ? {
                 headers: {
                     'Authorization': `Bearer ${id}`,
                 }
@@ -78,7 +78,7 @@ const Form = () => {
                 formData.forEach((value, key) => {
                     console.log(`${key}: ${value}`);
                 });
-                const respose = await axios.post(`${import.meta.env.VITE_SERVER_URL}/product/insert`, formData, {
+                const respose = await axios.post(`${import.meta.env.VITE_FRONTEND_URL}/product/insert`, formData, {
                     headers: {
                         "Content-Type": "multipart/form-data"
                     }

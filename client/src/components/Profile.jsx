@@ -19,14 +19,14 @@ const Profile = () => {
         //Get User
         const id = localStorage.getItem('id')
 
-        const userResponse = await axios.get(`${import.meta.env.VITE_SERVER_URL}/login/success`, (id) ? {
+        const userResponse = await axios.get(`${import.meta.env.VITE_FRONTEND_URL}/login/success`, (id) ? {
           headers: {
             'Authorization': `Bearer ${id}`,
           }
         } : { withCredentials: true })
 
         //Get product
-        const productResponse = await axios.get(`${import.meta.env.VITE_SERVER_URL}/product`)
+        const productResponse = await axios.get(`${import.meta.env.VITE_FRONTEND_URL}/product`)
         const [userDataResponse, productDataResponse] = await Promise.all([userResponse, productResponse]);
 
         // Extract data from responses
@@ -71,7 +71,7 @@ const Profile = () => {
 
   const DeleteProduct = async (id) => {
     try {
-      await axios.delete(`${import.meta.env.VITE_SERVER_URL}/product/${id}`)
+      await axios.delete(`${import.meta.env.VITE_FRONTEND_URL}/product/${id}`)
       window.location.reload()
     } catch (error) {
       console.log(error);

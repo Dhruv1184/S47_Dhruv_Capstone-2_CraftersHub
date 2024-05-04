@@ -21,7 +21,7 @@ const EditProfile = () => {
         const getData = async () => {
             try {
                 console.log(id);
-                const profile = await axios.get(`${import.meta.env.VITE_SERVER_URL}/update/${id}`)
+                const profile = await axios.get(`${import.meta.env.VITE_FRONTEND_URL}/update/${id}`)
                 console.log(profile);
                 setName(profile.data.name)
                 setEmail(profile.data.username)
@@ -61,7 +61,7 @@ const EditProfile = () => {
                 formData.append('ownerImg', ownerImg)
             }
 
-            axios.put(`${import.meta.env.VITE_SERVER_URL}/update/${id}`, formData)
+            axios.put(`${import.meta.env.VITE_FRONTEND_URL}/update/${id}`, formData)
                 .then((res) => {
                     console.log(res);
                     setSuccess("profile update Successfully")

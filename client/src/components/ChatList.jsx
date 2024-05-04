@@ -30,7 +30,7 @@ const ChatList = () => {
             try {
                 const id = localStorage.getItem('id')
 
-                const response = await axios.get(`${import.meta.env.VITE_SERVER_URL}/login/success`, (id) ? {
+                const response = await axios.get(`${import.meta.env.VITE_FRONTEND_URL}/login/success`, (id) ? {
                     headers: {
                         'Authorization': `Bearer ${id}`,
                     }
@@ -47,7 +47,7 @@ const ChatList = () => {
 
         const fetchList = async () => {
             try {
-                const list = await axios.get(`${import.meta.env.VITE_SERVER_URL}/getOtherUser`, {
+                const list = await axios.get(`${import.meta.env.VITE_FRONTEND_URL}/getOtherUser`, {
                     params: {
                         senderId: user._id
                     }

@@ -8,7 +8,7 @@ const Footer = () => {
       <div>
         <div className='flex text-center items-center justify-center pt-[1vh]'>
             <img src={logo} className='h-[100px]' alt="logo" />
-            <h1 className='text-2xl font-serif font-semibold'>Wheels on rent</h1>
+            <h1 className='text-2xl font-serif font-semibold'>Crafters Hub</h1>
         </div>
         <div className='flex flex-col items-center justify-center text-[1.3vh]'>
             <h1 className='text-base'>Developed by <span className='text-[3vh] ml-[0.4vw] font-serif font-semibold'>Dhruv Khandelwal</span></h1>

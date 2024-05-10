@@ -9,7 +9,7 @@ const getMessages = (user) => {
         console.log('user._id',user._id);
         const getMessage = async (user) => {
             try {
-                const response = await axios.get(`http://localhost:9000/message/${selectedConversation._id}`, {
+                const response = await axios.get(`https://s47-dhruv-capstone-2-craftershub-1.onrender.com/message/${selectedConversation._id}`, {
                     params: {
                         senderId: user._id
                         // conversationId: conversation_Id

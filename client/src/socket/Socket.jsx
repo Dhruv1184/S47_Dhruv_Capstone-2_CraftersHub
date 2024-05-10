@@ -17,7 +17,7 @@ export const SocketContextProvider = ({ children }) => {
     try {
       const id = localStorage.getItem('id')
 
-      const response = await axios.get('http://localhost:9000/login/success', (!id) ? { withCredentials: true } : {
+      const response = await axios.get('https://s47-dhruv-capstone-2-craftershub-1.onrender.com/login/success', (!id) ? { withCredentials: true } : {
         headers: {
           'Authorization': `Bearer ${id}`,
         }
@@ -36,7 +36,7 @@ export const SocketContextProvider = ({ children }) => {
       // console.log('selectedConversation',selectedConversation? selectedConversation._id: null);
       console.log("conversation_Id in getMEssage",conversation_Id);
 
-      const socket = io('http://localhost:9000', {
+      const socket = io('https://s47-dhruv-capstone-2-craftershub-1.onrender.com', {
         query: {
           userId: user._id,
           conversationId : conversation_Id

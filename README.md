@@ -27,5 +27,5 @@ Integration with third-party authentication services like Google will enhance se
 
 
 
-Server deployed link = https://s47-dhruv-capstone-2-craftershub-1.onrender.com
-Frontend deployed link = https://craftershub.netlify.app/
+Server deployed link = https://s47-dhruv-capstone-2-craftershub-2.onrender.com
+Frontend deployed link = https://crafters-hub.netlify.app

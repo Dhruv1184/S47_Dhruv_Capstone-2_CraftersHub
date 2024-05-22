@@ -134,7 +134,7 @@ class User {
                 return next(err)
             }
             console.log("logout");
-            res.redirect('http://localhost:5173/')
+            res.redirect('https://crafters-hub.netlify.app/')
         })
     }
 

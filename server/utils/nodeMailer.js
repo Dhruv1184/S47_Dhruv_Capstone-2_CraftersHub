@@ -18,7 +18,7 @@ const ForgetPasswordMail = (user, token) => {
         from: process.env.EMAIL,
         to: `${user.username}`,
         subject: "Reset your password",
-        text: `Click on this link to reset your password  ${process.env.Frontend_URL}/resetPassword/${user._id}/${token}`
+        text: `Click on this link to reset your password  https://s47-dhruv-capstone-2-craftershub-2.onrender.com/resetPassword/${user._id}/${token}`
     }
 
     transporter.sendMail(mailOptions, function (error, info) {

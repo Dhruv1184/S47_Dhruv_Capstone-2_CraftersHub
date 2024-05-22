@@ -34,7 +34,7 @@ const Form = () => {
         try {
             const id = localStorage.getItem('id')
 
-            const response = await axios.get(`https://s47-dhruv-capstone-2-craftershub-1.onrender.com/login/success`, (id) ? {
+            const response = await axios.get(`https://s47-dhruv-capstone-2-craftershub-2.onrender.com/login/success`, (id) ? {
                 headers: {
                     'Authorization': `Bearer ${id}`,
                 }
@@ -78,7 +78,7 @@ const Form = () => {
                 formData.forEach((value, key) => {
                     console.log(`${key}: ${value}`);
                 });
-                const respose = await axios.post(`https://s47-dhruv-capstone-2-craftershub-1.onrender.com/product/insert`, formData, {
+                const respose = await axios.post(`https://s47-dhruv-capstone-2-craftershub-2.onrender.com/product/insert`, formData, {
                     headers: {
                         "Content-Type": "multipart/form-data"
                     }

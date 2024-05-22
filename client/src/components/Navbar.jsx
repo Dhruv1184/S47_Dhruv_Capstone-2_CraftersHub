@@ -27,7 +27,7 @@ const Navbar = forwardRef(({option}, ref) => {
     const id = localStorage.getItem('id')
 
     try {
-      const response = await axios.get(`https://s47-dhruv-capstone-2-craftershub-1.onrender.com/login/success`, (id) ? {
+      const response = await axios.get(`https://s47-dhruv-capstone-2-craftershub-2.onrender.com/login/success`, (id) ? {
         headers: {
           'Authorization': `Bearer ${id}`,
         }
@@ -45,7 +45,7 @@ const Navbar = forwardRef(({option}, ref) => {
   //Handle logout
   const logout = () => {
     localStorage.clear()
-    window.open(`https://s47-dhruv-capstone-2-craftershub-1.onrender.com/logout`, "_self")
+    window.open(`https://s47-dhruv-capstone-2-craftershub-2.onrender.com/logout`, "_self")
   }
 
   // console.log(navbarOption);

@@ -45,8 +45,8 @@ auth.get('/auth/google', passport.authenticate("google", { scope: ["profile", "e
 
 
 auth.get('/auth/google/callback', passport.authenticate("google", {
-    successRedirect: "https://golden-meringue-9c68e5.netlify.app",
-    failureRedirect: `https://s47-dhruv-capstone-2-craftershub-1.onrender.com/login`
+    successRedirect: "https://crafters-hub.netlify.app/",
+    failureRedirect: `https://s47-dhruv-capstone-2-craftershub-2.onrender.com/login`
 }))
 
 auth.get('/login/success', User.SuccessLogin)

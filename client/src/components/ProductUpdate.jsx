@@ -28,7 +28,7 @@ const ProductUpdate = () => {
             try {
                 const id = localStorage.getItem('id')
 
-                const response = await axios.get(`https://s47-dhruv-capstone-2-craftershub-1.onrender.com/login/success` ,(id)?  {
+                const response = await axios.get(`https://s47-dhruv-capstone-2-craftershub-2.onrender.com/login/success` ,(id)?  {
                     headers:{
                       'Authorization': `Bearer ${id}`,
                     }}:{ withCredentials: true })
@@ -40,7 +40,7 @@ const ProductUpdate = () => {
         }
         const productData = async () => {
             try {
-                const productData = await axios.get(`https://s47-dhruv-capstone-2-craftershub-1.onrender.com/product/${id}`)
+                const productData = await axios.get(`https://s47-dhruv-capstone-2-craftershub-2.onrender.com/product/${id}`)
                 console.log(productData.data);
                 setProductName(productData.data.productName)
                 setCategory(productData.data.category)
@@ -66,7 +66,7 @@ const ProductUpdate = () => {
     const onSubmtBtn = (e) => {
         e.preventDefault()
 
-        axios.put(`https://s47-dhruv-capstone-2-craftershub-1.onrender.com/product/update/${id}`, {
+        axios.put(`https://s47-dhruv-capstone-2-craftershub-2.onrender.com/product/update/${id}`, {
             productName,
             category,
             material,

@@ -4,7 +4,7 @@ const SendMessage = () => {
     const {messages,selectedConversation, setMessages,conversation_Id, setConversationId} = useConversation()
     const sendMessage = async (newMessage,user)=>{
         try {
-            const response = await axios.post(`https://s47-dhruv-capstone-2-craftershub-1.onrender.com/message/send/${selectedConversation._id}`,{
+            const response = await axios.post(`https://s47-dhruv-capstone-2-craftershub-2.onrender.com/message/send/${selectedConversation._id}`,{
                 message: newMessage,
                 senderId: user._id
             })

@@ -11,6 +11,7 @@ const port = process.env.PORT || 2000
 
 const allowedOrigins = [
   'https://crafters-hub.netlify.app/',
+  'http://localhost:5173',
 ];
 
 const corsOptions = {

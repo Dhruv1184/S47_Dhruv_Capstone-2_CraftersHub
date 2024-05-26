@@ -9,18 +9,9 @@ require('dotenv').config()
 const port = process.env.PORT || 2000
 
 
-// const allowedOrigins = [
-//   'https://crafters-hub.netlify.app/',
-//   'http://localhost:5173',
-// ];
-
-// const corsOptions = {
-//   origin: allowedOrigins,
-//   credentials: true
-// };
 const allowedOrigins = [
   'https://crafters-hub.netlify.app',
-  'http://localhost:5173'
+  'http://localhost:5173',
 ];
 
 const corsOptions = {
@@ -36,9 +27,10 @@ const corsOptions = {
   credentials: true
 };
 
-  app.use(cors(corsOptions))
-  app.use(express.json())
-  app.use(express.urlencoded({ extended: true }));
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
   
 mongoose.connect(process.env.MONGOOSE_URL,{
     dbName:"CraftersHub"

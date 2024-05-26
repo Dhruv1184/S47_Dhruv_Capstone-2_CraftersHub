@@ -33,11 +33,10 @@ const BookPage = () => {
         const fetchUser = async () => {
             try {
                 const id = localStorage.getItem('id')
-                const response = await axios.get(`https://s47-dhruv-capstone-2-craftershub-2.onrender.com/login/success`, (id) ? {
-                    headers: {
-                        'Authorization': `Bearer ${id}`,
-                    }
-                } : { withCredentials: true })
+                const response = await axios.get(`https://s47-dhruv-capstone-2-craftershub-2.onrender.com/login/success`, {
+                    headers: id ? { 'Authorization': `Bearer ${id}` } : {},
+                    withCredentials: true
+                  });
                 setOnlineUser(response.data.user)
             } catch (error) {
                 console.log(error);

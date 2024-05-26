@@ -30,11 +30,10 @@ const ChatList = () => {
             try {
                 const id = localStorage.getItem('id')
 
-                const response = await axios.get(`https://s47-dhruv-capstone-2-craftershub-2.onrender.com/login/success`, (id) ? {
-                    headers: {
-                        'Authorization': `Bearer ${id}`,
-                    }
-                } : { withCredentials: true })
+                const response = await axios.get(`https://s47-dhruv-capstone-2-craftershub-2.onrender.com/login/success`, {
+                    headers: id ? { 'Authorization': `Bearer ${id}` } : {},
+                    withCredentials: true
+                  });
                 // console.log("response", response);
                 setFetchData(true)
                 setUser(response.data.user)

@@ -19,11 +19,10 @@ const Profile = () => {
         //Get User
         const id = localStorage.getItem('id')
 
-        const userResponse = await axios.get(`https://s47-dhruv-capstone-2-craftershub-2.onrender.com/login/success`, (id) ? {
-          headers: {
-            'Authorization': `Bearer ${id}`,
-          }
-        } : { withCredentials: true })
+        const userResponse = await axios.get(`https://s47-dhruv-capstone-2-craftershub-2.onrender.com/login/success`, {
+          headers: id ? { 'Authorization': `Bearer ${id}` } : {},
+          withCredentials: true
+        });
 
         //Get product
         const productResponse = await axios.get(`https://s47-dhruv-capstone-2-craftershub-2.onrender.com/product`)

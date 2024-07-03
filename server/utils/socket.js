@@ -1,42 +1,49 @@
-const express = require('express')
-const http = require('http')
-const {Server} = require('socket.io')
-const app = express()
+const express = require('express');
+const http = require('http');
+const { Server } = require('socket.io');
+const app = express();
 
-const server = http.createServer(app)
-const io = new Server(server,{
-    cors:{
-        origin:['https://s47-dhruv-capstone-2-crafters-hub.vercel.app/'],
-        methods:['GET','POST']
-    }
-})
+const allowedOrigins = [
+  'https://s47-dhruv-capstone-2-crafters-hub.vercel.app',
+  // other allowed origins can be added here
+];
 
-const userSocketMap = {}
+const corsOptions = {
+  origin: allowedOrigins,
+  methods: ['GET', 'POST'],
+  credentials: true,
+};
 
-const getReceiverSocketId = (receiverId)=>{
-    return userSocketMap[receiverId]
-}
+const server = http.createServer(app);
+const io = new Server(server, {
+  cors: corsOptions,
+});
 
+const userSocketMap = {};
 
-io.on("connection",(socket)=>{
-    console.log("user connected ",socket.id);
+const getReceiverSocketId = (receiverId) => {
+  return userSocketMap[receiverId];
+};
 
-    const userId = socket.handshake.query.userId
-    const conversation = socket.handshake.query.conversationId
-    const conversationId = conversation.toString()
-    console.log("conversationId socket.js",conversationId);
-    if(userId != 'undefined'){
-        userSocketMap[userId] = socket.id
-    }
-    socket.join(conversationId)
+io.on('connection', (socket) => {
+  console.log('user connected ', socket.id);
 
-    io.emit('getOnlineUSer',Object.keys(userSocketMap))
+  const userId = socket.handshake.query.userId;
+  const conversation = socket.handshake.query.conversationId;
+  const conversationId = conversation.toString();
+  console.log('conversationId socket.js', conversationId);
+  if (userId !== 'undefined') {
+    userSocketMap[userId] = socket.id;
+  }
+  socket.join(conversationId);
 
-    socket.on('disconnect',()=>{
-        console.log('user disconnected ',socket.id);
-        delete userSocketMap[userId]
-        io.emit('getOnlineUSer',Object.keys(userSocketMap))
-    })
-    
-})
-module.exports  = {app,io,server, getReceiverSocketId}
+  io.emit('getOnlineUser', Object.keys(userSocketMap));
+
+  socket.on('disconnect', () => {
+    console.log('user disconnected ', socket.id);
+    delete userSocketMap[userId];
+    io.emit('getOnlineUser', Object.keys(userSocketMap));
+  });
+});
+
+module.exports = { app, io, server, getReceiverSocketId };

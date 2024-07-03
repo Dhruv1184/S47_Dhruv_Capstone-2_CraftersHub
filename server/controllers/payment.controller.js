@@ -44,7 +44,7 @@ const paymentVerification = async (req,res)=>{
             razorpay_signature
         })
         successPayment(razorpay_payment_id,razorpay_order_id,username)
-        res.redirect(`https://crafters-hub.netlify.app/orderPlaced?reference=${razorpay_payment_id}`)
+        res.redirect(`https://s47-dhruv-capstone-2-crafters-hub.vercel.app//orderPlaced?reference=${razorpay_payment_id}`)
     }else{
         res.status(400).json({
             success:false

@@ -109,7 +109,7 @@ const Product = () => {
                                     <Button
                                     onClick={() => countIncrease(index)}><ArrowForwardIos/></Button>
                                 </div>
-                                <div className='sm:flex sm:items-center my-10 mx-auto'>
+                                <div className='sm:flex sm:items-center my-10 mx-auto sm:w-[30vw]'>
                                     <div className='sm:text-xl'>
                                         <span>Product name:- <span className='sm:text-2xl text-xl font-serif font-semibold'>{item.productName}</span></span>
                                         <br />

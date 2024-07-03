@@ -45,7 +45,7 @@ auth.get('/auth/google', passport.authenticate("google", { scope: ["profile", "e
 
 
 auth.get('/auth/google/callback', passport.authenticate("google", {
-    successRedirect: "https://crafters-hub.netlify.app/",
+    successRedirect: "https://crafters-hub.netlify.app/" || 'https://s47-dhruv-capstone-2-crafters-hub.vercel.app/' || 'http://localhost:5173/',
     failureRedirect: `https://s47-dhruv-capstone-2-craftershub-2.onrender.com/login`
 }))
 

@@ -6,7 +6,7 @@ const app = express()
 const server = http.createServer(app)
 const io = new Server(server,{
     cors:{
-        origin:["https://crafters-hub.netlify.app",'https://s47-dhruv-capstone-2-crafters-hub.vercel.app/','http://localhost:5173'],
+        origin:['https://s47-dhruv-capstone-2-crafters-hub.vercel.app/'],
         methods:['GET','POST']
     }
 })

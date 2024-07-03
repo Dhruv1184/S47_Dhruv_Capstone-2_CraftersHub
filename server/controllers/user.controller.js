@@ -134,7 +134,7 @@ class User {
                 return next(err)
             }
             console.log("logout");
-            res.redirect('https://s47-dhruv-capstone-2-crafters-hub.vercel.app/'||'https://crafters-hub.netlify.app/')
+            res.redirect('https://s47-dhruv-capstone-2-crafters-hub.vercel.app/')
         })
     }
 
